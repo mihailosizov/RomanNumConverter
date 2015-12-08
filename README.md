@@ -7,7 +7,7 @@ Nice to have: sharing of Project on a Web-based Git repository hosting service (
 ###Values
 | Symbol	| Value |
 |-----------|-------|
-| I	1 |
+| I |	1 |
 | V |	5 |
 | X |	10 |
 | L |	50 |
