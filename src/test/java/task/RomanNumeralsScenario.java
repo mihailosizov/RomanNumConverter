@@ -25,6 +25,7 @@ public class RomanNumeralsScenario  extends JUnitStories {
         return new InstanceStepsFactory(configuration(), new RomanNumeralsSteps());
     }
 
+    @Override
     protected List<String> storyPaths() {
         return Arrays.asList("task/roman-numerals-conversion.story");
     }
