@@ -15,8 +15,6 @@ public class RomanNumeralsConverter {
 
     private String convertToRomanNumber(Integer arabicNumber) {
         switch (arabicNumber) {
-            case 0:
-                return "";
             case 1:
                 return "I";
             case 2:
