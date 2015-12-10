@@ -2,7 +2,7 @@ Meta:
 
 Narrative:
 As a roman guy
-I want to perform an conversion from arabic numerals to roman numerals
+I want to perform a conversion from arabic numerals to roman numerals
 So that I can understand these odd arabic numbers
 
 Scenario: convert 1944 to roman number

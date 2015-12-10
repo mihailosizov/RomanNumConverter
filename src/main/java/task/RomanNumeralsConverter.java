@@ -2,81 +2,52 @@ package task;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class RomanNumeralsConverter {
+    private final HashMap<Integer, String> romanNumbersTable = new HashMap<>();
+
+    {
+        romanNumbersTable.put(0, "");
+        romanNumbersTable.put(1, "I");
+        romanNumbersTable.put(2, "II");
+        romanNumbersTable.put(3, "III");
+        romanNumbersTable.put(4, "IV");
+        romanNumbersTable.put(5, "V");
+        romanNumbersTable.put(6, "VI");
+        romanNumbersTable.put(7, "VII");
+        romanNumbersTable.put(8, "VIII");
+        romanNumbersTable.put(9, "IX");
+        romanNumbersTable.put(10, "X");
+        romanNumbersTable.put(20, "XX");
+        romanNumbersTable.put(30, "XXX");
+        romanNumbersTable.put(40, "XL");
+        romanNumbersTable.put(50, "L");
+        romanNumbersTable.put(60, "LX");
+        romanNumbersTable.put(70, "LXX");
+        romanNumbersTable.put(80, "LXXX");
+        romanNumbersTable.put(90, "XC");
+        romanNumbersTable.put(100, "C");
+        romanNumbersTable.put(200, "CC");
+        romanNumbersTable.put(300, "CCC");
+        romanNumbersTable.put(400, "CD");
+        romanNumbersTable.put(500, "D");
+        romanNumbersTable.put(600, "DC");
+        romanNumbersTable.put(700, "DCC");
+        romanNumbersTable.put(800, "DCCC");
+        romanNumbersTable.put(900, "CM");
+        romanNumbersTable.put(1000, "M");
+        romanNumbersTable.put(2000, "MM");
+        romanNumbersTable.put(3000, "MMM");
+    }
+
     public String convert(Integer number) {
         String romanNumber = "";
         ArrayList<Integer> summarizableArray = new ArrayList<>(Arrays.asList(convertIntToSummarizableArray(number)));
         for (Integer value : summarizableArray) {
-            romanNumber += convertToRomanNumber(value);
+            romanNumber += romanNumbersTable.get(value);
         }
         return romanNumber;
-    }
-
-    private String convertToRomanNumber(Integer arabicNumber) {
-        switch (arabicNumber) {
-            case 1:
-                return "I";
-            case 2:
-                return "II";
-            case 3:
-                return "III";
-            case 4:
-                return "IV";
-            case 5:
-                return "V";
-            case 6:
-                return "VI";
-            case 7:
-                return "VII";
-            case 8:
-                return "VIII";
-            case 9:
-                return "IX";
-            case 10:
-                return "X";
-            case 20:
-                return "XX";
-            case 30:
-                return "XXX";
-            case 40:
-                return "XL";
-            case 50:
-                return "L";
-            case 60:
-                return "LX";
-            case 70:
-                return "LXX";
-            case 80:
-                return "LXXX";
-            case 90:
-                return "XC";
-            case 100:
-                return "C";
-            case 200:
-                return "CC";
-            case 300:
-                return "CCC";
-            case 400:
-                return "CD";
-            case 500:
-                return "D";
-            case 600:
-                return "DC";
-            case 700:
-                return "DCC";
-            case 800:
-                return "DCCC";
-            case 900:
-                return "CM";
-            case 1000:
-                return "M";
-            case 2000:
-                return "MM";
-            case 3000:
-                return "MMM";
-        }
-        return "";
     }
 
     private Integer[] convertIntToSummarizableArray(Integer number) {
